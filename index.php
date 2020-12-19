@@ -1,6 +1,6 @@
 
 <?php
-    include('conectar.php');
+    include('./html/conectar.php');
 
     
 ?>
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Notas</title>
 </head>
 
@@ -21,7 +21,7 @@
 
         <nav class="navbar navbar-light bg-dark">
             <a class="navbar-brand " id="logo" href="#">
-                <img src="../imagens/logo.png" width="100" height="100" class="d-inline-block align-top" alt="Logo">
+                <img src="./imagens/logo.png" width="100" height="100" class="d-inline-block align-top" alt="Logo">
                 Notas
             </a>
         </nav>
@@ -32,7 +32,7 @@
             <h4 class="titulo mt-4 mb-4">Publique seus pensamentos</h4>
         </div>
         <div class="container jumbotrom">
-            <form method="post" action="enviar.php" class="form-group">
+            <form method="post" action="./html/enviar.php" class="form-group">
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input type="text" class="form-control" id="titulo" placeholder="Digite o título" name="titulo" required>
@@ -54,7 +54,8 @@
         <div class="container container-fluid mt-5">
         <div class="jumbotron jumbotron-fluid d-flex flex-wrap">
                 <?php
-                        $sql="Select * from nota";
+                        // Colocando a View 
+                        $sql="select * from vw_selectnotas;";
                         $result=$conn->query($sql);
                 
                         if($result->num_rows>0){
@@ -67,7 +68,7 @@
                                     <h5 class="card-title"><?php echo $rows["titulo"];?></  h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><?php echo    $rows["autor"];?></h6>
                                     <p class="card-text"><?php echo $rows["mensagem"];?></p>
-                                    <a href="apagar.php?p=apagar&id=<?php echo $rows    ['idnota'];?>" onclick="return confirm('Confirma exclusão?')" class="btn btn-outline-danger ">Apagar</a>
+                                    <a href="./html/apagar.php?p=apagar&id=<?php echo $rows    ['idnota'];?>" onclick="return confirm('Confirma exclusão?')" class="btn btn-outline-danger ">Apagar</a>
                                 </div>
                             </div>
                     

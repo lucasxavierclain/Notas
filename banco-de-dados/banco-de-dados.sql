@@ -6,3 +6,5 @@ CREATE TABLE `notas`.`nota` (
   `autor` VARCHAR(45) NULL,
   `mensagem` VARCHAR(300) NULL,
   PRIMARY KEY (`idnota`));
+
+CREATE VIEW vw_selectnotas AS SELECT * FROM nota;

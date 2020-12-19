@@ -9,7 +9,7 @@
         $sql="insert into nota (titulo,autor,mensagem) values('$titulo','$autor','$mensagem')";
         $result=$conn->query($sql);
         
-        echo "<script> alert('Nota cadastrada!'); location.href='index.php?p=inicial';
+        echo "<script> alert('Nota cadastrada!'); location.href='../index.php?p=inicial';
         </script>";
     }     
    
