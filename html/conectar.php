@@ -1,7 +1,7 @@
 <?php
     $server="localhost";
-    $username="espacolucas";
-    $password="123456";
+    $username="lucas";
+    $password="@Recode123";
     $database="notas";
 
 
